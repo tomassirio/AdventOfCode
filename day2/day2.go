@@ -6,11 +6,17 @@ import (
 	"strings"
 )
 
+var input = utils.GetInput("day2")
+
 type direction string
 
 type directionPair struct {
 	direction direction
 	depth int
+}
+
+func newDirectionPair(direction direction, depth int) directionPair{
+	return directionPair{direction, depth}
 }
 
 type position struct {
@@ -19,24 +25,15 @@ type position struct {
 	aim int
 }
 
-func getInput() []string{
-	return utils.GetFileInput("day2/input.txt")
-}
-
-func newPair(direction direction, depth int) directionPair{
-	return directionPair{direction, depth}
-}
-
 func newPosition() position{
-	return position{0,0, 0}
+	return position{0,0,0}
 }
 
 func generalSolution() []directionPair{
-	lines := getInput()
 	//Remove empty space from lines
-	lines = lines[:len(lines)-1]
+	input = input[:len(input)-1]
 
-	directionPairs := createDirectionPairs(lines)
+	directionPairs := createDirectionPairs(input)
 	return directionPairs
 }
 
@@ -64,7 +61,7 @@ func createDirectionPairs(lines []string) []directionPair{
 	var directionPairs []directionPair
 	for _, line := range lines {
 		fields := splitFields(line)
-		newPair := newPair(direction(fields[0]), getDepth(fields))
+		newPair := newDirectionPair(direction(fields[0]), getDepth(fields))
 		directionPairs = append(directionPairs, newPair)
 	}
 	return directionPairs

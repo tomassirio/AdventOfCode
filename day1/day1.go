@@ -5,12 +5,9 @@ import (
 	"strconv"
 )
 
-func getInput() []string{
-	return utils.GetFileInput("day1/input.txt")
-}
+var input = utils.GetInput("day1")
 
 func Solution1() int{
-	input := getInput()
 	previousValue := -1
 	increasedValues := 0
 	for _, value := range input {
@@ -27,7 +24,6 @@ func Solution1() int{
 }
 
 func Solution2() int{
-	input := getInput()
 	previousValue := -1
 	increasedValues := 0
 	for i := 0; i < len(input) -2; i++ {

@@ -21,3 +21,7 @@ func OpenFile(path string) []byte {
 	}
 	return content
 }
+
+func GetInput(day string) []string{
+	return GetFileInput(day+"/input.txt")
+}
