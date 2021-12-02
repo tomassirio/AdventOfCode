@@ -6,7 +6,7 @@ import (
 )
 
 func getInput() []string{
-	return utils.ScanFile("day1/input.txt")
+	return utils.GetFileInput("day1/input.txt")
 }
 
 func Solution1() int{

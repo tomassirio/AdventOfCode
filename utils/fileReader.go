@@ -6,13 +6,18 @@ import (
 	"strings"
 )
 
-func ScanFile(path string) []string{
+func GetFileInput(path string) []string{
+	file := OpenFile(path)
+	lines := strings.Split(string(file), "\n")
+
+	return lines
+}
+
+func OpenFile(path string) []byte {
 	content, err := ioutil.ReadFile(path)
 
 	if err != nil {
 		panic("File couldn't be read")
 	}
-	lines := strings.Split(string(content), "\n")
-
-	return lines
+	return content
 }

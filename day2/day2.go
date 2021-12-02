@@ -20,7 +20,7 @@ type position struct {
 }
 
 func getInput() []string{
-	return utils.ScanFile("day2/input.txt")
+	return utils.GetFileInput("day2/input.txt")
 }
 
 func newPair(direction direction, depth int) directionPair{
