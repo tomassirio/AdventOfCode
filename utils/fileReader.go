@@ -25,3 +25,9 @@ func OpenFile(path string) []byte {
 func GetInput(day string) []string{
 	return GetFileInput(day+"/input.txt")
 }
+
+func GetCleanInput(day string) []string{
+	//Remove empty space from lines
+	input := GetInput(day)
+	return input[:len(input)-1]
+}

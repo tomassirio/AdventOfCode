@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-var input = utils.GetInput("day2")
+var input = utils.GetCleanInput("day2")
 
 type direction string
 
@@ -30,9 +30,6 @@ func newPosition() position{
 }
 
 func generalSolution() []directionPair{
-	//Remove empty space from lines
-	input = input[:len(input)-1]
-
 	directionPairs := createDirectionPairs(input)
 	return directionPairs
 }
