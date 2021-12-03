@@ -1,12 +1,9 @@
 package day2
 
 import (
-	"github.com/tomassirio/adventOfCode/utils"
 	"strconv"
 	"strings"
 )
-
-var input = utils.GetCleanInput("day2")
 
 type direction string
 
@@ -29,17 +26,17 @@ func newPosition() position{
 	return position{0,0,0}
 }
 
-func generalSolution() []directionPair{
+func generalSolution(input []string) []directionPair{
 	directionPairs := createDirectionPairs(input)
 	return directionPairs
 }
 
-func Solution1() int{
-	return getFinalResult(calculatePosition(generalSolution()))
+func Solution1(input []string) int{
+	return getFinalResult(calculatePosition(generalSolution(input)))
 }
 
-func Solution2() int{
-	return getFinalResult(calculatePosition2(generalSolution()))
+func Solution2(input []string) int{
+	return getFinalResult(calculatePosition2(generalSolution(input)))
 }
 
 func splitFields(line string) []string{

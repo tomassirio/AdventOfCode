@@ -2,14 +2,12 @@ package day3
 
 import (
 	"fmt"
-	"github.com/tomassirio/adventOfCode/utils"
 	"strconv"
 )
 
-var input = utils.GetCleanInput("day3")
 
-func Solution1() int {
-	binaryString := getBinaryWithMoreRepeatedBits()
+func Solution1(input []string) int {
+	binaryString := getBinaryWithMoreRepeatedBits(input)
 
 	gammaRate := getRate(binaryString)
 	epsilonRate := getRate(xor(binaryString))
@@ -17,11 +15,11 @@ func Solution1() int {
 	return getFinalResult(gammaRate, epsilonRate)
 }
 
-func Solution2() int {
+func Solution2(input []string) int {
 
-	oxygenGenerationRating := getOxygenRate()
+	oxygenGenerationRating := getOxygenRate(input)
 
-	c02ScrubberRating := getC02Rate()
+	c02ScrubberRating := getC02Rate(input)
 
 
 	return getFinalResult(oxygenGenerationRating, c02ScrubberRating)
@@ -39,12 +37,12 @@ func xor(binary string) string {
 	return newSolution
 }
 
-func getValuesLength() int {
+func getValuesLength(input []string) int {
 	return len(input[0])
 }
 
-func getBinaryWithMoreRepeatedBits() string{
-	valuesLength := getValuesLength()
+func getBinaryWithMoreRepeatedBits(input []string) string{
+	valuesLength := getValuesLength(input)
 	j := 0
 	solution := ""
 	for j  < valuesLength {
@@ -88,10 +86,10 @@ func getFinalResult(rate1, rate2 int) int {
 	return rate1 * rate2
 }
 
-func getOxygenRate() int{
-	valuesLength := getValuesLength()
+func getOxygenRate(input []string) int{
+	valuesLength := getValuesLength(input)
 	index := 0
-	newInput := copyInputValues()
+	newInput := copyInputValues(input)
 	for index < valuesLength {
 		temp := newInput[:0]
 
@@ -112,10 +110,10 @@ func getOxygenRate() int{
 	return getRate(newInput[0])
 }
 
-func getC02Rate() int{
-	valuesLength := getValuesLength()
+func getC02Rate(input []string) int{
+	valuesLength := getValuesLength(input)
 	index := 0
-	newInput := copyInputValues()
+	newInput := copyInputValues(input)
 	for index < valuesLength {
 		temp := newInput[:0]
 		amountOf0s, amountOf1s := getAmountOf0sAnd1s(index, newInput)
@@ -143,7 +141,7 @@ func pickValuesWithBit(newInput, temp []string, index int, bit byte) []string{
 	return temp
 }
 
-func copyInputValues() []string{
+func copyInputValues(input []string) []string{
 	newInput := make([]string, len(input))
 	copy(newInput, input)
 	return newInput
