@@ -5,8 +5,13 @@ import (
 	"strconv"
 )
 
+type Day struct {}
 
-func Solution1(input []string) int {
+func NewDay() Day{
+	return Day{}
+}
+
+func (d Day) Solution1(input []string) int {
 	binaryString := getBinaryWithMoreRepeatedBits(input)
 
 	gammaRate := getRate(binaryString)
@@ -15,7 +20,7 @@ func Solution1(input []string) int {
 	return getFinalResult(gammaRate, epsilonRate)
 }
 
-func Solution2(input []string) int {
+func (d Day) Solution2(input []string) int {
 
 	oxygenGenerationRating := getOxygenRate(input)
 

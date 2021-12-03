@@ -1,13 +1,15 @@
 package dayx
 
-import "github.com/tomassirio/adventOfCode/utils"
+type Day struct {}
 
-var input = utils.GetInput("dayx")
+func NewDay() Day{
+	return Day{}
+}
 
-func Solution1(input []string) int {
+func (d Day) Solution1(input []string) int {
 	return 0
 }
 
-func Solution2(input []string) int {
+func (d Day) Solution2(input []string) int {
 	return 0
 }

@@ -5,6 +5,13 @@ import (
 	"strings"
 )
 
+type Day struct {
+}
+
+func NewDay() Day{
+	return Day{}
+}
+
 type direction string
 
 type directionPair struct {
@@ -31,11 +38,11 @@ func generalSolution(input []string) []directionPair{
 	return directionPairs
 }
 
-func Solution1(input []string) int{
+func (d Day) Solution1(input []string) int{
 	return getFinalResult(calculatePosition(generalSolution(input)))
 }
 
-func Solution2(input []string) int{
+func (d Day) Solution2(input []string) int{
 	return getFinalResult(calculatePosition2(generalSolution(input)))
 }
 

@@ -3,6 +3,7 @@ package utils
 
 import (
 	"io/ioutil"
+	"strconv"
 	"strings"
 )
 
@@ -23,11 +24,11 @@ func OpenFile(path string) []byte {
 }
 
 func GetInput(day string) []string{
-	return GetFileInput(day+"/input.txt")
+	return GetFileInput("day"+day+"/input.txt")
 }
 
-func GetCleanInput(day string) []string{
+func GetCleanInput(day int) []string{
 	//Remove empty space from lines
-	input := GetInput(day)
+	input := GetInput(strconv.Itoa(day))
 	return input[:len(input)-1]
 }

@@ -4,11 +4,16 @@ import (
 	"strconv"
 )
 
-func Solution1(input []string) int{
+type Day struct {}
+
+func NewDay() Day{
+	return Day{}
+}
+
+func (d Day) Solution1(input []string) int{
 	previousValue := -1
 	increasedValues := 0
 	for _, value := range input {
-		//fmt.Println(value)
 		numericValue, _ := strconv.Atoi(value)
 		if previousValue > 0 {
 			if numericValue > previousValue {
@@ -20,7 +25,7 @@ func Solution1(input []string) int{
 	return increasedValues
 }
 
-func Solution2(input []string) int{
+func (d Day) Solution2(input []string) int{
 	previousValue := -1
 	increasedValues := 0
 	for i := 0; i < len(input) -2; i++ {
