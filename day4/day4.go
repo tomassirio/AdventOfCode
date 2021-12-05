@@ -1,7 +1,6 @@
 package day4
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 )
@@ -56,8 +55,6 @@ func (d Day) Solution2(input []string) int {
 			break
 		}
 	}
-	fmt.Println(loserBoard)
-	fmt.Println(loserNumber)
 	boardSum := calculateMatrixSum(loserBoard)
 	return calculateFinalResult(boardSum, loserNumber)
 }

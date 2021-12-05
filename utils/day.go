@@ -5,6 +5,7 @@ import (
 	"github.com/tomassirio/adventOfCode/day2"
 	"github.com/tomassirio/adventOfCode/day3"
 	"github.com/tomassirio/adventOfCode/day4"
+	"github.com/tomassirio/adventOfCode/day5"
 )
 
 type iDay interface {
@@ -18,7 +19,7 @@ func DayGetter(day int) iDay {
 	case 2: return day2.NewDay()
 	case 3: return day3.NewDay()
 	case 4: return day4.NewDay()
-	//case 5: return day1.NewDay()
+	case 5: return day5.NewDay()
 	//case 6: return day1.NewDay()
 	//case 7: return day1.NewDay()
 	//case 8: return day1.NewDay()
