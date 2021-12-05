@@ -5,7 +5,7 @@ import (
 	"github.com/tomassirio/adventOfCode/utils"
 )
 
-const DAY_NUMBER = 3
+const DAY_NUMBER = 4
 
 func main() {
 	day := 1

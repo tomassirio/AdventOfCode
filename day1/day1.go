@@ -42,3 +42,5 @@ func (d Day) Solution2(input []string) int{
 	}
 	return increasedValues
 }
+
+func (d Day) PrintSolution(){}
