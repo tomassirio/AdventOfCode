@@ -29,7 +29,6 @@ func (d Day) Solution1(input []string) int {
 	matrix := createMatrix(1000)
 
 	matrix = markMatrix(movements, matrix)
-
 	return countResult(matrix)
 }
 
@@ -97,22 +96,25 @@ func markMatrixX(mov movement, matrix mapMatrix, positive bool) mapMatrix{
 func markMatrixY(i int, mov movement, matrix mapMatrix, positive bool) mapMatrix {
 	if positive {
 		for j := mov.src.y; j < mov.dst.y ; j++ {
-			matrix = markCell(i, j, matrix)
+			matrix = markCell(i, j, mov, matrix)
 		}
 	} else {
 		for j := mov.dst.y; j < mov.src.y ; j++ {
-			matrix = markCell(i, j, matrix)
+			matrix = markCell(i, j, mov, matrix)
 		}
 	}
 	return matrix
 }
 
-func markCell(i, j int, matrix mapMatrix) mapMatrix {
-	if matrix.values[i][j] == -1 {
-		matrix.values[i][j] = 1
-	} else {
-		matrix.values[i][j] = matrix.values[i][j] + 1
+func markCell(i, j int, mov movement, matrix mapMatrix) mapMatrix {
+	if mov.src.x == mov.dst.x || mov.src.y == mov.dst.y {
+		if matrix.values[i][j] == -1 {
+			matrix.values[i][j] = 1
+		} else {
+			matrix.values[i][j] = matrix.values[i][j] + 1
+		}
 	}
+
 	return matrix
 }
 
