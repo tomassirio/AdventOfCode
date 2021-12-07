@@ -4,12 +4,12 @@ import (
 	"testing"
 )
 
-const SOLUTION_1_RESULT = -1
-const SOLUTION_2_RESULT = -1
+const SOLUTION_1_RESULT = 37
+const SOLUTION_2_RESULT = 168
 
 func TestSolution1(t *testing.T) {
 	inputMock := []string{
-		//INSERT INPUT
+		"16,1,2,0,4,2,7,1,2,14",
 
 	}
 	functionResult := NewDay().Solution1(inputMock)
@@ -21,7 +21,7 @@ func TestSolution1(t *testing.T) {
 
 func TestSolution2(t *testing.T) {
 	inputMock := []string{
-		//INSERT INPUT
+		"16,1,2,0,4,2,7,1,2,14",
 	}
 	functionResult := NewDay().Solution2(inputMock)
 
