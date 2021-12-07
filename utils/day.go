@@ -7,7 +7,10 @@ import (
 	"github.com/tomassirio/adventOfCode/day4"
 	"github.com/tomassirio/adventOfCode/day5"
 	"github.com/tomassirio/adventOfCode/day6"
+	"github.com/tomassirio/adventOfCode/day7"
 )
+
+const DAY_NUMBER = 7
 
 type iDay interface {
 	Solution1([]string)int
@@ -22,7 +25,7 @@ func DayGetter(day int) iDay {
 	case 4: return day4.NewDay()
 	case 5: return day5.NewDay()
 	case 6: return day6.NewDay()
-	//case 7: return day1.NewDay()
+	case 7: return day7.NewDay()
 	//case 8: return day1.NewDay()
 	//case 9: return day1.NewDay()
 	//case 10: return day1.NewDay()
